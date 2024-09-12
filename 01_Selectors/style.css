@@ -1,0 +1,19 @@
+        /*ELEMENT Selektor --> gilt für alle*/
+        div{
+            background-color: rgb(155, 26, 99);
+        }
+
+        /*id selektor --> kann man nur einmal verwenden*/
+        #header{
+            font-size: 2rem;
+        }
+
+        /*Klassenselektor --> kann man öfters verwenden*/
+        .subtitle{
+            color: white;
+        }
+
+        #text p{
+            background-color: magenta;
+        }
+
