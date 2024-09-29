@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: violet;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+
+        .container{
+            background-color: blue;
+            display: flex;
+            flex-direction: row;
+            justify-content: center; /*justify content macht es in der horizontalen richtung (zentriert in der hauptachse) */
+            align-items: center; /*macht es in der nebenachse*/
+        }
+
+    </style>
+</head>
+<body>
+    <!-- flexbox zum horizontal skalieren -->
+     <div class="container">
+        <div class="box">eins</div>
+        <div class="box">zwei</div>
+        <div class="box">drei</div>
+     </div>
+
+     <div class="container">
+        <div class="box">eins</div>
+        <div class="box">zwei</div>
+        <div class="box">drei</div>
+     </div>
+</body>
+</html>
