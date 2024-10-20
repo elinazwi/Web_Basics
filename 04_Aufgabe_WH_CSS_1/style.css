@@ -1,0 +1,34 @@
+.longbox{
+    height: 25vh;
+    width: 100vw;
+    background-color: black;
+    
+}
+
+.bigbox{
+    background-color: orangered;
+    position: relative;
+    height: 400px;
+    width: 300px;
+    margin-top: 40px;
+    margin-left: 40px;
+
+}
+
+.smallbox1{
+    background-color: palevioletred;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.smallbox2{
+    background-color: black;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 100;
+    left: 20;
+}
