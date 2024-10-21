@@ -1,0 +1,57 @@
+.flexbox{
+    align-items: start;
+    height: 80vh;
+    justify-content: space-between;
+    display: flex;
+}
+
+.bigbox{
+    background-color: blue;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    display: flex;
+}
+
+.bigbox{
+    background-color: blue;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    display: flex;
+}
+
+.smallbox1{
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.smallbox2{
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.flexbox2{
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    height: 20vh;
+}
+
+.greenbox{
+    position: relative;
+    background-color: green;
+    height: 200px;
+    width: 200px;
+    right: 0;
+    bottom: 0;
+}
+
