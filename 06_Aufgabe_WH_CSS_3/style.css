@@ -1,0 +1,55 @@
+.flexbox{
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 50px;
+}
+
+.middlebox{
+    background-color: blue;
+    height: 200px;
+    width: 150px;
+    margin: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+}
+
+.smallbox{
+    height: 50px;
+    width: 50px;
+    background-color: lightblue;
+}
+
+.transparentbox{
+    height: 40vh;
+    justify-content: end;
+    display: flex;
+}
+
+.bigbox{
+    background-color: palevioletred;
+    height: 40vh;
+    width: 400px;
+    position: relative;
+}
+
+.box1{
+    background-color: blueviolet;
+    height: 100px;
+    width: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box2{
+    background-color: pink;
+    position: absolute;
+    height: 100px;
+    width: 150px;
+    bottom: 0;
+    left: -40px;
+}
