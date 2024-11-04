@@ -1,0 +1,55 @@
+.flexbox{
+    display: flex;
+    margin: 40px;
+    height: 400px;
+    position: relative;
+}
+
+.greenbox{
+    background-color: green;
+    height: 300px;
+    width: 200px;
+}
+
+.bluebox{
+    display: flex;
+    background-color: blue;
+    height: 300px;
+    width: 200px;
+    position: relative;
+}
+
+.orangebox{
+    background-color: orange;
+    height: 100px;
+    width: 400px;
+    position: absolute;
+    margin-top: 300px;
+}
+
+.greybox{
+    background-color: grey;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.orangebox2{
+    background-color: orange;
+    height: 150px;
+    width: 150px;
+}
+
+.blackbox{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background-color: black;
+    right: 0;
+    top: 0;
+}
