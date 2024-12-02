@@ -1,0 +1,24 @@
+.header{
+    background-color: black;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    justify-content: center;
+}
+
+.leftside{
+    color: red;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw;
+}
+
+.rightside{
+    align-items: center;
+    justify-content: flex-end;
+    width: 10;
+}
