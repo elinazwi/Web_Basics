@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2a0a2a;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    color: #ff69b4;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px #ff69b4;
+}
+
+.betting-options {
+    background-color: #3d1f3d;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #ff69b4;
+    margin-bottom: 1rem;
+}
+
+.position-btn {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.position-btn:hover {
+    background-color: #ff1493;
+    transform: scale(1.05);
+}
+
+.position-btn.selected {
+    background-color: #ff1493;
+    box-shadow: 0 0 10px #ff69b4;
+}
+
+.roulette-wheel {
+    width: 300px;
+    height: 300px;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.wheel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #ff1493 0deg 10deg,
+        #ff69b4 10deg 20deg,
+        #ff1493 20deg 30deg,
+        #ff69b4 30deg 40deg,
+        #ff1493 40deg 50deg,
+        #ff69b4 50deg 60deg,
+        #ff1493 60deg 70deg,
+        #ff69b4 70deg 80deg,
+        #ff1493 80deg 90deg,
+        #ff69b4 90deg 100deg,
+        #ff1493 100deg 110deg,
+        #ff69b4 110deg 120deg,
+        #ff1493 120deg 130deg,
+        #ff69b4 130deg 140deg,
+        #ff1493 140deg 150deg,
+        #ff69b4 150deg 160deg,
+        #ff1493 160deg 170deg,
+        #ff69b4 170deg 180deg,
+        #ff1493 180deg 190deg,
+        #ff69b4 190deg 200deg,
+        #ff1493 200deg 210deg,
+        #ff69b4 210deg 220deg,
+        #ff1493 220deg 230deg,
+        #ff69b4 230deg 240deg,
+        #ff1493 240deg 250deg,
+        #ff69b4 250deg 260deg,
+        #ff1493 260deg 270deg,
+        #ff69b4 270deg 280deg,
+        #ff1493 280deg 290deg,
+        #ff69b4 290deg 300deg,
+        #ff1493 300deg 310deg,
+        #ff69b4 310deg 320deg,
+        #ff1493 320deg 330deg,
+        #ff69b4 330deg 340deg,
+        #ff1493 340deg 350deg,
+        #ff69b4 350deg 360deg
+    );
+    border: 8px solid #ff69b4;
+    position: relative;
+    transition: transform 3s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wheel::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, #3d1f3d 60%, transparent 61%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.wheel-marker {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #ff69b4;
+    filter: drop-shadow(0 0 5px #ff1493);
+    z-index: 2;
+}
+
+.wheel-numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.number {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    top: 10px;
+    transform-origin: 50% 140px; /* Adjust based on wheel size */
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.lightning-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.controls {
+    margin: 2rem 0;
+}
+
+#bet-amount {
+    padding: 10px;
+    border: 2px solid #ff69b4;
+    border-radius: 5px;
+    background-color: #3d1f3d;
+    color: white;
+    margin-right: 10px;
+}
+
+#spin-btn {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#spin-btn:hover {
+    background-color: #ff1493;
+    transform: scale(1.05);
+}
+
+.results {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+#balance {
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+#result-message {
+    margin-top: 1rem;
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+@keyframes lightning {
+    0% { box-shadow: 0 0 30px #ff69b4; }
+    50% { box-shadow: 0 0 50px #ff1493; }
+    100% { box-shadow: 0 0 30px #ff69b4; }
+}
+
+.lightning-active {
+    animation: lightning 0.5s ease-in-out infinite;
+}
+
+.betting-table {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #4a1f4a;
+    border-radius: 10px;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px;
+    margin-bottom: 1rem;
+}
+
+.main-numbers {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 5px;
+}
+
+.number-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.number-btn.red { background-color: #e81416; color: white; }
+.number-btn.black { background-color: #1f1f1f; color: white; }
+.number-btn.zero {
+    grid-row: span 3;
+    height: 125px;
+    border-radius: 20px;
+    background-color: #00b300;
+    color: white;
+}
+
+.number-btn.selected {
+    transform: scale(0.9);
+    box-shadow: 0 0 10px #ff69b4;
+}
+
+.special-bets {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dozen-bets, .other-bets {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.special-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: #3d1f3d;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.special-btn:hover, .number-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px #ff69b4;
+}
+
+.current-bets {
+    background-color: #3d1f3d;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+#active-bets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.bet-chip {
+    background-color: #ff69b4;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.history-numbers {
+    display: flex;
+    gap: 5px;
+    margin-top: 0.5rem;
+    overflow-x: auto;
+    padding: 5px;
+}
+
+.history-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(3600deg); }
+}
+
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeInOut 4s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.notification.win {
+    background-color: rgba(0, 255, 0, 0.9);
+    box-shadow: 0 0 30px #00ff00;
+}
+
+.notification.lose {
+    background-color: rgba(255, 0, 0, 0.9);
+    box-shadow: 0 0 30px #ff0000;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    10% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    20% { transform: translate(-50%, -50%) scale(1); }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.spinning {
+    animation: spin 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+.number-btn.winning {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px #ff69b4; }
+    50% { transform: scale(1.1); box-shadow: 0 0 20px #ff69b4; }
+    100% { transform: scale(1); box-shadow: 0 0 10px #ff69b4; }
+} 

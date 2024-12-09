@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Simple Game</h1>
+        <div id="score">Score: 0</div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreElement = document.getElementById('score');
+        
+        // Player
+        const player = {
+            x: canvas.width / 2,
+            y: canvas.height - 30,
+            width: 50,
+            height: 50,
+            color: '#ff69b4',
+            speed: 12
+        };
+
+        // Game state
+        let score = 0;
+        let gameLoop;
+        let target = createTarget();
+
+        // Create random target
+        function createTarget() {
+            return {
+                x: Math.random() * (canvas.width - 20),
+                y: 0,
+                width: 20,
+                height: 20,
+                color: '#f00',
+                speed: 2
+            };
+        }
+
+        // Draw functions
+        function drawPlayer() {
+            ctx.fillStyle = player.color;
+            ctx.fillRect(player.x, player.y, player.width, player.height);
+        }
+
+        function drawTarget() {
+            ctx.fillStyle = target.color;
+            ctx.fillRect(target.x, target.y, target.width, target.height);
+        }
+
+        // Check collision
+        function checkCollision() {
+            return player.x < target.x + target.width &&
+                   player.x + player.width > target.x &&
+                   player.y < target.y + target.height &&
+                   player.y + player.height > target.y;
+        }
+
+        // Game loop
+        function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Move target down
+            target.y += target.speed;
+            
+            // Check if target is caught
+            if (checkCollision()) {
+                score += 10;
+                scoreElement.textContent = `Score: ${score}`;
+                target = createTarget();
+            }
+            
+            // Check if target is missed
+            if (target.y > canvas.height) {
+                target = createTarget();
+            }
+            
+            drawPlayer();
+            drawTarget();
+        }
+
+        // Controls
+        document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case 'ArrowLeft':
+                    if (player.x > 0) player.x -= player.speed;
+                    break;
+                case 'ArrowRight':
+                    if (player.x < canvas.width - player.width) player.x += player.speed;
+                    break;
+            }
+        });
+
+        // Start game
+        gameLoop = setInterval(update, 1000/60);
+    </script>
+</body>
+</html>

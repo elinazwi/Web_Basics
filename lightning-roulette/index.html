@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightning Roulette</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lightning Roulette</h1>
+        
+        <div class="betting-options">
+            <div class="roulette-wheel">
+                <div class="wheel-container">
+                    <div class="wheel"></div>
+                    <div class="lightning-effect"></div>
+                    <div class="wheel-marker"></div>
+                </div>
+            </div>
+
+            <div class="betting-table">
+                <div class="numbers-grid">
+                    <button class="number-btn zero" data-number="0">0</button>
+                    <div class="main-numbers">
+                        <!-- Numbers 1-36 will be added via JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="special-bets">
+                    <div class="dozen-bets">
+                        <button class="special-btn" data-bet="1st12">1st 12</button>
+                        <button class="special-btn" data-bet="2nd12">2nd 12</button>
+                        <button class="special-btn" data-bet="3rd12">3rd 12</button>
+                    </div>
+                    <div class="other-bets">
+                        <button class="special-btn" data-bet="1-18">1-18</button>
+                        <button class="special-btn" data-bet="even">EVEN</button>
+                        <button class="special-btn red" data-bet="red">RED</button>
+                        <button class="special-btn black" data-bet="black">BLACK</button>
+                        <button class="special-btn" data-bet="odd">ODD</button>
+                        <button class="special-btn" data-bet="19-36">19-36</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="bet-controls">
+                    <input type="number" id="bet-amount" min="1" value="10" placeholder="Bet Amount">
+                    <button id="clear-bets">Clear Bets</button>
+                </div>
+                <div class="current-bets">
+                    <h3>Current Bets:</h3>
+                    <div id="active-bets"></div>
+                    <p>Total Bet: <span id="total-bet">0</span></p>
+                </div>
+                <button id="spin-btn">SPIN</button>
+            </div>
+
+            <div class="results">
+                <p>Balance: <span id="balance">1000</span></p>
+                <p id="result-message"></p>
+                <div id="history">
+                    <h3>Previous Numbers:</h3>
+                    <div class="history-numbers"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

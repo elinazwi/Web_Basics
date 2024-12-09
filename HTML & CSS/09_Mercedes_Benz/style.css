@@ -22,3 +22,14 @@
     justify-content: flex-end;
     width: 10;
 }
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu div {
+    display: inline-block;
+    margin-right: 20px;
+    
+}
