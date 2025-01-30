@@ -35,13 +35,13 @@ function makePizza(pizzaName, callback) {
     // Simuliere eine Zeitverzögerung (z. B. für einen Netzwerkdownload)
     setTimeout(function () {
         console.log("Ihre Pizza wird gerade in den Ofen geschoben");
-        callback(pizzaName); // Rufe die Callback-Funktion auf, nachdem der Download abgeschlossen ist
+        callback(pizzaName, price); // Rufe die Callback-Funktion auf, nachdem der Download abgeschlossen ist
     }, 5000); // 
 
 }
 
 function finishedPizza(pizzaName, price) {
-    console.log("Ihre Pizza " + pizzaName + " ist fertig und kostet " + price + "Euro.");
+    console.log("Ihre Pizza " + pizzaName + " ist fertig und kostet " + price + " Euro.");
 }
 
 let randomPrice = Math.random() * 20;
