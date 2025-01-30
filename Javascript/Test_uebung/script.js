@@ -31,7 +31,7 @@ console.log(result);
 let num = 100;
 
 while (num >= 25) {
-    if ((num != 50) && (num !== 40) && (num !== 30)) {
+    if ((num != 50) && (num != 40) && (num != 30)) {
         console.log(num);
     }
     num -= 5;
