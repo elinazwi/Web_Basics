@@ -3,7 +3,7 @@ let sum = 0;
 for (let index = 7; index < 344; index++) {
     if (index % 12 == 0) {
         sum += index*3
-    } else {
+    } else if (index % 2 == 0){
         sum+=index
     }
 }
