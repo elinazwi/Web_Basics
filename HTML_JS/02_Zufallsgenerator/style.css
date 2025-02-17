@@ -1,0 +1,45 @@
+
+
+input{
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.box1{
+    width: 50%;
+    margin-left: 10px;
+}
+
+.box2{
+    width: 50%;
+    margin-right: 10px;
+}
+
+#output{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-weight: 800;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:hover{
+    background-color: rgb(249, 78, 203);
+}
