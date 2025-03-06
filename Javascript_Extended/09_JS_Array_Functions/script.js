@@ -6,10 +6,20 @@ const products = [
     { name: "Soccer Ball", price: 34.99 },
   ];
 
+const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let includesTwo = items.includes(0);
+console.log(includesTwo);
+
+
+  let reduce1 = products.reduce((currentTotal, product) => currentTotal + product.price, 0);
+    //console.log(reduce1);
+
   let reduce = products.reduce((currentTotal, product) => {
     return product.price + currentTotal;
   }, 0)
-
+  //console.log(reduce);
+  
   
   let some = products.every((product) => {
     return product.price > 20;
