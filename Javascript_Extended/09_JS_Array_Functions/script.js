@@ -11,6 +11,8 @@ const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let includesTwo = items.includes(0);
 console.log(includesTwo);
 
+//test ran
+
 
   let reduce1 = products.reduce((currentTotal, product) => currentTotal + product.price, 0);
     //console.log(reduce1);
