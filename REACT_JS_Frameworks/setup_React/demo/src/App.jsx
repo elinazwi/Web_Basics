@@ -1,17 +1,15 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Card from './components/Card'
+import Aufgabe2 from './components/pages/Aufgabe_2'
 
-function App() {
+export default function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      Excercise.jsx
+      <Aufgabe2/>
     </>
   )
 }
 
-export default App
+
