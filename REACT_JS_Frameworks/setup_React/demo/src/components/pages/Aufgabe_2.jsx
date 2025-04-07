@@ -1,4 +1,7 @@
 import React from 'react'
+import Card from '../Card'
+import Button from '../Button'
+
 
 export default function List() {
   return (
@@ -9,9 +12,15 @@ export default function List() {
         <div className="p-5 border-2 border-white bg-pink-400 ml-3 hover:bg-pink-700 transition w-50">Coffee</div>
         <div className="p-5 border-2  border-white bg-pink-400 ml-3 hover:bg-pink-700 transition w-50">Tea</div>
         <div className="p-5 border-2 border-white bg-pink-400 ml-3 hover:bg-pink-700 transition w-50">Beer</div>
-
-        
       </div>
+
+      <Button/>
+
+      <Card name={"Lenz"}jobtitle={"Abteilungsvorstand"}description={"lässig"}/>
     </>
+
+    
+
+    
   )
 }
